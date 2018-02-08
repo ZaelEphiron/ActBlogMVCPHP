@@ -45,7 +45,7 @@ class CommentManager extends Manager
     
    
     
-    /*public function deleteComment($comment)
+    public function deleteComment($comment)
     {
     $db = $this->dbConnect();
     $comment = $db->prepare('DELETE FROM comments WHERE comment');
