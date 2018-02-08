@@ -69,4 +69,20 @@ function updateComment($commentID, $comment)
         exit();
 
     }
+    
+function deleteComment($commentID)
+{
+    $commentManager = new CommentManager();
+    
+    $affectedComment = $commentManager->deleteComment($commentID);
+    
+    if($affectedComment == false){
+        throw new Exception('Erreur lors de la suppression !');
+    }
+    else {
+        header('Location: index.php?action=listPosts');
+        //echo "<script type='text/javascript'>window.location.href = 'index.php?action=listPosts';</script>'";
+        exit();
+
+    }
 }
